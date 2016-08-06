@@ -1,0 +1,68 @@
+package work;
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+
+public class Day6Review  {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan = new Scanner(System.in);
+        int T = scan.nextInt();
+        char [] evens = null;
+        char [] odds = null;
+        
+        String in = "";
+        String [] arr = new String[T];
+        int stringLength = 0;
+        String stringValue="";
+       for(int i=0;i<T;i++)
+        {
+    	   
+           in = scan.next();
+           arr[i]=in;
+        }
+        
+        for(int j=0;j<=arr.length-1;j++)
+        {
+        	stringLength = arr[j].length();
+        	stringValue = arr[j];
+        	System.out.println(stringValue);
+        	for (int x=0;x<=stringLength-1;x++)
+        	{
+        		evens = new char [stringLength];
+        		odds = new char [stringLength] ;
+         		
+        		System.out.println(stringValue.toCharArray()[x]);
+        		if(x%2==0) 
+        		{
+        			System.out.println("even:"+x);
+        			evens[x] = stringValue.toCharArray()[x];	
+        		}
+        		else 
+        		{
+        			System.out.println("odd:"+x);
+        			odds[x] = stringValue.toCharArray()[x];
+    
+        		}
+        		
+        		
+        	}
+        }
+        
+        for (int e=0;e<=evens.length-1;e++)
+		{ 
+			System.out.print(evens[e]);
+		}
+		System.out.print(" ");
+		for (int o=0;o<=odds.length-1;o++)
+		{ 
+			System.out.print(odds[o]);
+		}
+        
+    }
+}
